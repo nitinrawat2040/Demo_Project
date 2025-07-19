@@ -1,0 +1,130 @@
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+.main-title {
+    font-family: 'Orbitron', 'Arial', sans-serif;
+    font-size: 2.8rem;
+    color: #ffe082;
+    text-shadow: 0 0 8px #ffb300, 0 0 24px #ffb300, 2px 2px 8px #333;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 8px #ffb300, 0 0 24px #ffb300, 2px 2px 8px #333;
+    }
+
+    to {
+        text-shadow: 0 0 24px #ffd700, 0 0 48px #ffd700, 2px 2px 8px #333;
+    }
+}
+
+.user-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: #fffbe6;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(255, 193, 7, 0.15);
+    padding: 16px 24px;
+    margin-bottom: 10px;
+}
+
+.add-user-input,
+.user-select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1.5px solid #ffd54f;
+    font-size: 1rem;
+    background: #fffde7;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.add-user-input:focus,
+.user-select:focus {
+    border: 1.5px solid #ffb300;
+}
+
+.add-user-btn,
+.claim-btn {
+    position: relative;
+    background: linear-gradient(90deg, #ffb300 60%, #ffd54f 100%);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 24px 8px 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.15);
+    transition: background 0.2s, transform 0.1s;
+    overflow: hidden;
+}
+
+.add-user-btn::before,
+.claim-btn::before {
+    content: '🎮';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+}
+
+.claim-btn::before {
+    content: '⚡';
+}
+
+.add-user-btn:hover,
+.claim-btn:hover:enabled {
+    background: linear-gradient(90deg, #ffd54f 60%, #ffb300 100%);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.claim-btn:disabled {
+    background: #ffe082;
+    color: #bdbdbd;
+    cursor: not-allowed;
+}
+
+.claim-message {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #43a047;
+    font-weight: bold;
+    background: #fffde7;
+    border-radius: 8px;
+    padding: 8px 16px;
+    box-shadow: 0 1px 4px rgba(67, 160, 71, 0.08);
+}
+
+.header-panel {
+    background: linear-gradient(135deg, #fffbe6 60%, #ffe082 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(255, 193, 7, 0.18);
+    padding: 32px 32px 24px 32px;
+    margin: 32px auto 0 auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-user-btn:active,
+.claim-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 1px 4px rgba(255, 193, 7, 0.10);
+}
+
+body {
+    background: linear-gradient(120deg, #fffbe6 0%, #ffe082 100%);
+    min-height: 100vh;
+}
