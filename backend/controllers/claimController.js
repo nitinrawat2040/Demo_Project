@@ -27,7 +27,11 @@ exports.getLeaderboard = async (req, res) => {
         totalPoints: user.totalPoints,
         _id: user._id
     }));
-    res.json(leaderboard);
+    res.json({
+        leaderboard,
+        timestamp: new Date().toISOString(),
+        message: 'Fresh data from server'
+    });
 };
 
 exports.getClaimHistory = async (req, res) => {
